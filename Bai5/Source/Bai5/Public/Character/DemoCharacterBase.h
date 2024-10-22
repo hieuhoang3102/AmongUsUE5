@@ -9,7 +9,7 @@
 #include "GameplayTagContainer.h"
 #include "DemoCharacterBase.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParams(FCharacterDiedDelegate, ADemoCharacterBase*, character);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCharacterDiedDelegate, ADemoCharacterBase*, Character);
 
 UCLASS()
 class BAI5_API ADemoCharacterBase : public ACharacter, public IAbilitySystemInterface
@@ -20,21 +20,21 @@ public:
 	// Sets default values for this character's properties
 	ADemoCharacterBase(const class FObjectInitializer& ObjectInitializer);
 
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	// // Called every frame
+	// virtual void Tick(float DeltaTime) override;
 
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	// // Called to bind functionality to input
+	// virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 	
 	UPROPERTY(BlueprintAssignable, Category="Demo|Character")
 	FCharacterDiedDelegate OnCharacterDied;
 
-	UPROPERTY(BlueprintAssignable, Category="Demo|Character")
+	UFUNCTION(BlueprintCallable, Category="Demo|Character")
 	virtual bool IsAlive() const; 
 
-	UPROPERTY(BlueprintAssignable, Category="Demo|Character")
+	UFUNCTION(BlueprintCallable, Category="Demo|Character")
 	virtual int32 GetAbilityLevel(DemoAbilitiesID AbilityID) const;
 
 	virtual void RemoveCharacterAbilities();
@@ -44,16 +44,19 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Demo|Character")
 	virtual void FinishDying();
 
-	UFUNCTION(BlueprintCallable, Category="Demo|Character")
+	UFUNCTION(BlueprintCallable, Category="Demo|Character|Attribites")
+	float GetCharacterLevel() const;
+	
+	UFUNCTION(BlueprintCallable, Category="Demo|Character|Attribites")
 	float GetHealth() const;
 	
-	UFUNCTION(BlueprintCallable, Category="Demo|Character")
+	UFUNCTION(BlueprintCallable, Category="Demo|Character|Attribites")
 	float GetMaxHealth() const;
 	
-	UFUNCTION(BlueprintCallable, Category="Demo|Character")
+	UFUNCTION(BlueprintCallable, Category="Demo|Character|Attribites")
 	float GetMana() const;
 	
-	UFUNCTION(BlueprintCallable, Category="Demo|Character")
+	UFUNCTION(BlueprintCallable, Category="Demo|Character|Attribites")
 	float GetMaxMana() const;
 	
 protected:
@@ -61,7 +64,7 @@ protected:
 	virtual void BeginPlay() override;
 
 	TWeakObjectPtr<class UCharacterAbilitySystemComponent> AbilitySystemComponent;
-	TWeakObjectPtr<class ChracterAttributeSetBase> AttributeSetBase;
+	TWeakObjectPtr<class UCharacterAttributeSetBase> AttributeSetBase;
 
 	FGameplayTag DeadTag;
 	FGameplayTag EffectRemoveOnDeathTag;
@@ -70,19 +73,22 @@ protected:
 	FText CharacterName;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, category = " Demo|Animation")
-	FAnminMontage* DeathMontage;
+	UAnimMontage* DeathMontage;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, category = " Demo|Abilities")
+	TArray<TSubclassOf<class UCharacterGameplayAbility>> CharacterAbilities;
+	
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, category = " Demo|Abilities")
 	TSubclassOf<class UGameplayEffect> DefaultAttributes;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, category = " Demo|Abilities")
-	TArray<class UGameplayEffect> StarupEffects;
+	TArray<TSubclassOf<class UGameplayEffect>> StartupEffects;
 
 	virtual void AddCharacterAbilities();
 
 	virtual void InitializeAttributes();
 
-	virtual void AddStarupEffects();
+	virtual void AddStartupEffects();
 
 	virtual void SetHealth(float Health);
 	

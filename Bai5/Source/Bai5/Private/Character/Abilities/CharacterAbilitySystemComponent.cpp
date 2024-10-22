@@ -15,6 +15,12 @@ UCharacterAbilitySystemComponent::UCharacterAbilitySystemComponent()
 }
 
 
+void UCharacterAbilitySystemComponent::ReceiveDamage(UCharacterAbilitySystemComponent* SourceASC,
+	float UnmitigateDamage, float MitigateDamage)
+{
+	ReceivedDamage.Broadcast(SourceASC, UnmitigateDamage, MitigateDamage);
+}
+
 // Called when the game starts
 void UCharacterAbilitySystemComponent::BeginPlay()
 {
@@ -33,14 +39,4 @@ void UCharacterAbilitySystemComponent::TickComponent(float DeltaTime, ELevelTick
 
 	// ...
 }
-
-void UCharacterAbilitySystemComponent::ReceiveDamage(UCharacterAbilitySystemComponent* SourceASC,
-	float UnmitigatedDamage, float MitigatedDamage)
-{
-	ReceivedDamage.Broadcast(SourceASC,UnmitigatedDamage,MitigatedDamage);
-}
-
-
-
-
 

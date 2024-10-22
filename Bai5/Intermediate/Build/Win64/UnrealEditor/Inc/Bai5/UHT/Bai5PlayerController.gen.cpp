@@ -32,9 +32,15 @@ struct Z_Construct_UClass_ABai5PlayerController_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);\n" },
+#endif
 		{ "HideCategories", "Collision Rendering Transformation" },
 		{ "IncludePath", "Bai5PlayerController.h" },
 		{ "ModuleRelativePath", "Bai5PlayerController.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);" },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ShortPressThreshold_MetaData[] = {
 		{ "Category", "Input" },
@@ -155,10 +161,10 @@ ABai5PlayerController::~ABai5PlayerController() {}
 struct Z_CompiledInDeferFile_FID_Bai5_Source_Bai5_Bai5PlayerController_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABai5PlayerController, ABai5PlayerController::StaticClass, TEXT("ABai5PlayerController"), &Z_Registration_Info_UClass_ABai5PlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABai5PlayerController), 1542148305U) },
+		{ Z_Construct_UClass_ABai5PlayerController, ABai5PlayerController::StaticClass, TEXT("ABai5PlayerController"), &Z_Registration_Info_UClass_ABai5PlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABai5PlayerController), 1486731221U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Bai5_Source_Bai5_Bai5PlayerController_h_188445741(TEXT("/Script/Bai5"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Bai5_Source_Bai5_Bai5PlayerController_h_4205108021(TEXT("/Script/Bai5"),
 	Z_CompiledInDeferFile_FID_Bai5_Source_Bai5_Bai5PlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Bai5_Source_Bai5_Bai5PlayerController_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

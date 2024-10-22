@@ -12,7 +12,7 @@ class UNiagaraSystem;
 class UInputMappingContext;
 class UInputAction;
 
-DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
+//DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 UCLASS()
 class ABai5PlayerController : public APlayerController
@@ -21,6 +21,7 @@ class ABai5PlayerController : public APlayerController
 
 public:
 	ABai5PlayerController();
+	virtual void AcknowledgePossession(class APawn* P) override;
 
 	/** Time Threshold to know if it was a short press */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)

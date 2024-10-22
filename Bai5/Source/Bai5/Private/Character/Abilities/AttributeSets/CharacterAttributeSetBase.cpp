@@ -5,6 +5,10 @@
 #include "Net/UnrealNetwork.h"
 
 
+void UCharacterAttributeSetBase::OnRep_Level(const FGameplayAttributeData& OldLevel)
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UCharacterAttributeSetBase, Level, OldLevel);
+}
 void UCharacterAttributeSetBase::OnRep_Health(const FGameplayAttributeData& OldHealth)
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UCharacterAttributeSetBase, Health, OldHealth);
@@ -25,9 +29,10 @@ void UCharacterAttributeSetBase::GetLifetimeReplicatedProps(TArray<FLifetimeProp
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
-	DOREPLIFETIME_CONDITION_NOTIFY(UCharacterAttributeSetBase, Health, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(UCharacterAttributeSetBase, MaxHealth, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(UCharacterAttributeSetBase, Mana, COND_None, REPNOTIFY_Always);
-	DOREPLIFETIME_CONDITION_NOTIFY(UCharacterAttributeSetBase, MaxMana, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME(UCharacterAttributeSetBase, Level);
+	DOREPLIFETIME(UCharacterAttributeSetBase, Health);
+	DOREPLIFETIME(UCharacterAttributeSetBase, MaxHealth);
+	DOREPLIFETIME(UCharacterAttributeSetBase, Mana);
+	DOREPLIFETIME(UCharacterAttributeSetBase, MaxMana);
 	
 }

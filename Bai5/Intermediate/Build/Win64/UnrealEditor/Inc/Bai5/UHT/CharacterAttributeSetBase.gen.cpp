@@ -226,23 +226,23 @@ struct Z_Construct_UClass_UCharacterAttributeSetBase_Statics
 		{ "ModuleRelativePath", "Public/Character/Abilities/AttributeSets/CharacterAttributeSetBase.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Health_MetaData[] = {
-		{ "Category", "Health" },
+		{ "Category", "Attributes" },
 		{ "ModuleRelativePath", "Public/Character/Abilities/AttributeSets/CharacterAttributeSetBase.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MaxHealth_MetaData[] = {
-		{ "Category", "Health" },
+		{ "Category", "Attributes" },
 		{ "ModuleRelativePath", "Public/Character/Abilities/AttributeSets/CharacterAttributeSetBase.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Mana_MetaData[] = {
-		{ "Category", "Mana" },
+		{ "Category", "Attributes" },
 		{ "ModuleRelativePath", "Public/Character/Abilities/AttributeSets/CharacterAttributeSetBase.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MaxMana_MetaData[] = {
-		{ "Category", "Mana" },
+		{ "Category", "Attributes" },
 		{ "ModuleRelativePath", "Public/Character/Abilities/AttributeSets/CharacterAttributeSetBase.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Damage_MetaData[] = {
-		{ "Category", "Damamge" },
+		{ "Category", "Attributes" },
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "//Damage is a meta attribute used by the DamageExecution to calculate final damage, which can turn into -Health\n//Temporary value that only exists on the Server. Not replicated.\n" },
 #endif
@@ -338,10 +338,10 @@ UCharacterAttributeSetBase::~UCharacterAttributeSetBase() {}
 struct Z_CompiledInDeferFile_FID_Bai5_Source_Bai5_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UCharacterAttributeSetBase, UCharacterAttributeSetBase::StaticClass, TEXT("UCharacterAttributeSetBase"), &Z_Registration_Info_UClass_UCharacterAttributeSetBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterAttributeSetBase), 4028126620U) },
+		{ Z_Construct_UClass_UCharacterAttributeSetBase, UCharacterAttributeSetBase::StaticClass, TEXT("UCharacterAttributeSetBase"), &Z_Registration_Info_UClass_UCharacterAttributeSetBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterAttributeSetBase), 2842211030U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Bai5_Source_Bai5_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_2555910024(TEXT("/Script/Bai5"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Bai5_Source_Bai5_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_391459253(TEXT("/Script/Bai5"),
 	Z_CompiledInDeferFile_FID_Bai5_Source_Bai5_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Bai5_Source_Bai5_Public_Character_Abilities_AttributeSets_CharacterAttributeSetBase_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

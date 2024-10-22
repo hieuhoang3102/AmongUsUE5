@@ -6,7 +6,7 @@
 #include "AbilitySystemComponent.h"
 #include "CharacterAbilitySystemComponent.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FReceivedDamageDelegate, UCharacterAbilitySystemComponent*, SourceASC, float, UnmitigatedDamage, float, MitigatedDamage);
+DECLARE_DYNAMIC_DELEGATE_ThreeParams(FReceiveDamageDelegate, UCharacterAbilitySystemComponent*, SourceASC, float, UnmitigateDamage, float, MitigateDamage);
 
 UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
 class BAI5_API UCharacterAbilitySystemComponent : public UAbilitySystemComponent
@@ -17,6 +17,12 @@ public:
 	// Sets default values for this component's properties
 	UCharacterAbilitySystemComponent();
 
+	bool CharacterAbilitiesGiven = false;
+	bool StartupEffectApplied = false;
+
+	FReceiveDamageDelegate ReceivedDamage;
+
+	virtual void ReceiveDamage(UCharacterAbilitySystemComponent* SourceASC, float UnmitigateDamage, float MitigateDamage);
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
@@ -25,11 +31,4 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType,
 	                           FActorComponentTickFunction* ThisTickFunction) override;
-
-	bool CharacterAbilitiesGiven = false;
-	bool StarUpEffectsApplied = false;
-	
-	FReceivedDamageDelegate ReceivedDamage;
-
-	virtual void ReceiveDamage(UCharacterAbilitySystemComponent* SourceASC, float UnmitigatedDamage, float MitigatedDamage);
 };
