@@ -6,7 +6,7 @@
 #include "AbilitySystemComponent.h"
 #include "CharacterAbilitySystemComponent.generated.h"
 
-DECLARE_DYNAMIC_DELEGATE_ThreeParams(FReceiveDamageDelegate, UCharacterAbilitySystemComponent*, SourceASC, float, UnmitigateDamage, float, MitigateDamage);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FReceiveDamageDelegate, UCharacterAbilitySystemComponent*, SourceASC, float, UnmitigateDamage, float, MitigateDamage);
 
 UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
 class BAI5_API UCharacterAbilitySystemComponent : public UAbilitySystemComponent

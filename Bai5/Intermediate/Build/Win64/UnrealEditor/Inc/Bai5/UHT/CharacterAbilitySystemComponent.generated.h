@@ -16,7 +16,7 @@ class UCharacterAbilitySystemComponent;
 #define BAI5_CharacterAbilitySystemComponent_generated_h
 
 #define FID_Bai5_Source_Bai5_Public_Character_Abilities_CharacterAbilitySystemComponent_h_9_DELEGATE \
-BAI5_API void FReceivedDamageDelegate_DelegateWrapper(const FMulticastScriptDelegate& ReceivedDamageDelegate, UCharacterAbilitySystemComponent* SourceASC, float UnmitigatedDamage, float MitigatedDamage);
+BAI5_API void FReceiveDamageDelegate_DelegateWrapper(const FMulticastScriptDelegate& ReceiveDamageDelegate, UCharacterAbilitySystemComponent* SourceASC, float UnmitigateDamage, float MitigateDamage);
 
 
 #define FID_Bai5_Source_Bai5_Public_Character_Abilities_CharacterAbilitySystemComponent_h_14_INCLASS_NO_PURE_DECLS \

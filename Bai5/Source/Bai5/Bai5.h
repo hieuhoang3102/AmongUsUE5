@@ -7,7 +7,7 @@
 DECLARE_LOG_CATEGORY_EXTERN(LogBai5, Log, All);
 
 UENUM(BlueprintType)
-enum class DemoAbilitiesID: uint8
+enum class DemoAbilityID: uint8
 {
 	None UMETA(DisplayName = "None"),
 	Confirm UMETA(DisplayName = "Confirm"),

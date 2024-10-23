@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BAI5_GASController_generated_h
 
-#define FID_Bai5_Source_Bai5_Public_Character_GASController_h_15_INCLASS_NO_PURE_DECLS \
+#define FID_Bai5_Source_Bai5_Public_Character_GASController_h_19_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAGASController(); \
 	friend struct Z_Construct_UClass_AGASController_Statics; \
@@ -23,9 +23,7 @@ public: \
 	DECLARE_SERIALIZER(AGASController)
 
 
-#define FID_Bai5_Source_Bai5_Public_Character_GASController_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AGASController(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+#define FID_Bai5_Source_Bai5_Public_Character_GASController_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AGASController(AGASController&&); \
@@ -33,16 +31,16 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AGASController); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AGASController); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AGASController) \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AGASController) \
 	NO_API virtual ~AGASController();
 
 
-#define FID_Bai5_Source_Bai5_Public_Character_GASController_h_12_PROLOG
-#define FID_Bai5_Source_Bai5_Public_Character_GASController_h_15_GENERATED_BODY \
+#define FID_Bai5_Source_Bai5_Public_Character_GASController_h_16_PROLOG
+#define FID_Bai5_Source_Bai5_Public_Character_GASController_h_19_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Bai5_Source_Bai5_Public_Character_GASController_h_15_INCLASS_NO_PURE_DECLS \
-	FID_Bai5_Source_Bai5_Public_Character_GASController_h_15_ENHANCED_CONSTRUCTORS \
+	FID_Bai5_Source_Bai5_Public_Character_GASController_h_19_INCLASS_NO_PURE_DECLS \
+	FID_Bai5_Source_Bai5_Public_Character_GASController_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

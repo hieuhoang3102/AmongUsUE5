@@ -12,19 +12,19 @@ void EmptyLinkFunctionForGeneratedCodeCharacterAbilitySystemComponent() {}
 // Begin Cross Module References
 BAI5_API UClass* Z_Construct_UClass_UCharacterAbilitySystemComponent();
 BAI5_API UClass* Z_Construct_UClass_UCharacterAbilitySystemComponent_NoRegister();
-BAI5_API UFunction* Z_Construct_UDelegateFunction_Bai5_ReceivedDamageDelegate__DelegateSignature();
+BAI5_API UFunction* Z_Construct_UDelegateFunction_Bai5_ReceiveDamageDelegate__DelegateSignature();
 GAMEPLAYABILITIES_API UClass* Z_Construct_UClass_UAbilitySystemComponent();
 UPackage* Z_Construct_UPackage__Script_Bai5();
 // End Cross Module References
 
-// Begin Delegate FReceivedDamageDelegate
-struct Z_Construct_UDelegateFunction_Bai5_ReceivedDamageDelegate__DelegateSignature_Statics
+// Begin Delegate FReceiveDamageDelegate
+struct Z_Construct_UDelegateFunction_Bai5_ReceiveDamageDelegate__DelegateSignature_Statics
 {
-	struct _Script_Bai5_eventReceivedDamageDelegate_Parms
+	struct _Script_Bai5_eventReceiveDamageDelegate_Parms
 	{
 		UCharacterAbilitySystemComponent* SourceASC;
-		float UnmitigatedDamage;
-		float MitigatedDamage;
+		float UnmitigateDamage;
+		float MitigateDamage;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
@@ -35,46 +35,46 @@ struct Z_Construct_UDelegateFunction_Bai5_ReceivedDamageDelegate__DelegateSignat
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SourceASC;
-	static const UECodeGen_Private::FFloatPropertyParams NewProp_UnmitigatedDamage;
-	static const UECodeGen_Private::FFloatPropertyParams NewProp_MitigatedDamage;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_UnmitigateDamage;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_MitigateDamage;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UDelegateFunction_Bai5_ReceivedDamageDelegate__DelegateSignature_Statics::NewProp_SourceASC = { "SourceASC", nullptr, (EPropertyFlags)0x0010000000080080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_Bai5_eventReceivedDamageDelegate_Parms, SourceASC), Z_Construct_UClass_UCharacterAbilitySystemComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SourceASC_MetaData), NewProp_SourceASC_MetaData) };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UDelegateFunction_Bai5_ReceivedDamageDelegate__DelegateSignature_Statics::NewProp_UnmitigatedDamage = { "UnmitigatedDamage", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_Bai5_eventReceivedDamageDelegate_Parms, UnmitigatedDamage), METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UDelegateFunction_Bai5_ReceivedDamageDelegate__DelegateSignature_Statics::NewProp_MitigatedDamage = { "MitigatedDamage", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_Bai5_eventReceivedDamageDelegate_Parms, MitigatedDamage), METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_Bai5_ReceivedDamageDelegate__DelegateSignature_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_Bai5_ReceivedDamageDelegate__DelegateSignature_Statics::NewProp_SourceASC,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_Bai5_ReceivedDamageDelegate__DelegateSignature_Statics::NewProp_UnmitigatedDamage,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_Bai5_ReceivedDamageDelegate__DelegateSignature_Statics::NewProp_MitigatedDamage,
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UDelegateFunction_Bai5_ReceiveDamageDelegate__DelegateSignature_Statics::NewProp_SourceASC = { "SourceASC", nullptr, (EPropertyFlags)0x0010000000080080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_Bai5_eventReceiveDamageDelegate_Parms, SourceASC), Z_Construct_UClass_UCharacterAbilitySystemComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SourceASC_MetaData), NewProp_SourceASC_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UDelegateFunction_Bai5_ReceiveDamageDelegate__DelegateSignature_Statics::NewProp_UnmitigateDamage = { "UnmitigateDamage", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_Bai5_eventReceiveDamageDelegate_Parms, UnmitigateDamage), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UDelegateFunction_Bai5_ReceiveDamageDelegate__DelegateSignature_Statics::NewProp_MitigateDamage = { "MitigateDamage", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_Bai5_eventReceiveDamageDelegate_Parms, MitigateDamage), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_Bai5_ReceiveDamageDelegate__DelegateSignature_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_Bai5_ReceiveDamageDelegate__DelegateSignature_Statics::NewProp_SourceASC,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_Bai5_ReceiveDamageDelegate__DelegateSignature_Statics::NewProp_UnmitigateDamage,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_Bai5_ReceiveDamageDelegate__DelegateSignature_Statics::NewProp_MitigateDamage,
 };
-static_assert(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Bai5_ReceivedDamageDelegate__DelegateSignature_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_Bai5_ReceivedDamageDelegate__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_Bai5, nullptr, "ReceivedDamageDelegate__DelegateSignature", nullptr, nullptr, Z_Construct_UDelegateFunction_Bai5_ReceivedDamageDelegate__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Bai5_ReceivedDamageDelegate__DelegateSignature_Statics::PropPointers), sizeof(Z_Construct_UDelegateFunction_Bai5_ReceivedDamageDelegate__DelegateSignature_Statics::_Script_Bai5_eventReceivedDamageDelegate_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Bai5_ReceivedDamageDelegate__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_Bai5_ReceivedDamageDelegate__DelegateSignature_Statics::Function_MetaDataParams) };
-static_assert(sizeof(Z_Construct_UDelegateFunction_Bai5_ReceivedDamageDelegate__DelegateSignature_Statics::_Script_Bai5_eventReceivedDamageDelegate_Parms) < MAX_uint16);
-UFunction* Z_Construct_UDelegateFunction_Bai5_ReceivedDamageDelegate__DelegateSignature()
+static_assert(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Bai5_ReceiveDamageDelegate__DelegateSignature_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_Bai5_ReceiveDamageDelegate__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_Bai5, nullptr, "ReceiveDamageDelegate__DelegateSignature", nullptr, nullptr, Z_Construct_UDelegateFunction_Bai5_ReceiveDamageDelegate__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Bai5_ReceiveDamageDelegate__DelegateSignature_Statics::PropPointers), sizeof(Z_Construct_UDelegateFunction_Bai5_ReceiveDamageDelegate__DelegateSignature_Statics::_Script_Bai5_eventReceiveDamageDelegate_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Bai5_ReceiveDamageDelegate__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_Bai5_ReceiveDamageDelegate__DelegateSignature_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UDelegateFunction_Bai5_ReceiveDamageDelegate__DelegateSignature_Statics::_Script_Bai5_eventReceiveDamageDelegate_Parms) < MAX_uint16);
+UFunction* Z_Construct_UDelegateFunction_Bai5_ReceiveDamageDelegate__DelegateSignature()
 {
 	static UFunction* ReturnFunction = nullptr;
 	if (!ReturnFunction)
 	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_Bai5_ReceivedDamageDelegate__DelegateSignature_Statics::FuncParams);
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_Bai5_ReceiveDamageDelegate__DelegateSignature_Statics::FuncParams);
 	}
 	return ReturnFunction;
 }
-void FReceivedDamageDelegate_DelegateWrapper(const FMulticastScriptDelegate& ReceivedDamageDelegate, UCharacterAbilitySystemComponent* SourceASC, float UnmitigatedDamage, float MitigatedDamage)
+void FReceiveDamageDelegate_DelegateWrapper(const FMulticastScriptDelegate& ReceiveDamageDelegate, UCharacterAbilitySystemComponent* SourceASC, float UnmitigateDamage, float MitigateDamage)
 {
-	struct _Script_Bai5_eventReceivedDamageDelegate_Parms
+	struct _Script_Bai5_eventReceiveDamageDelegate_Parms
 	{
 		UCharacterAbilitySystemComponent* SourceASC;
-		float UnmitigatedDamage;
-		float MitigatedDamage;
+		float UnmitigateDamage;
+		float MitigateDamage;
 	};
-	_Script_Bai5_eventReceivedDamageDelegate_Parms Parms;
+	_Script_Bai5_eventReceiveDamageDelegate_Parms Parms;
 	Parms.SourceASC=SourceASC;
-	Parms.UnmitigatedDamage=UnmitigatedDamage;
-	Parms.MitigatedDamage=MitigatedDamage;
-	ReceivedDamageDelegate.ProcessMulticastDelegate<UObject>(&Parms);
+	Parms.UnmitigateDamage=UnmitigateDamage;
+	Parms.MitigateDamage=MitigateDamage;
+	ReceiveDamageDelegate.ProcessMulticastDelegate<UObject>(&Parms);
 }
-// End Delegate FReceivedDamageDelegate
+// End Delegate FReceiveDamageDelegate
 
 // Begin Class UCharacterAbilitySystemComponent
 void UCharacterAbilitySystemComponent::StaticRegisterNativesUCharacterAbilitySystemComponent()

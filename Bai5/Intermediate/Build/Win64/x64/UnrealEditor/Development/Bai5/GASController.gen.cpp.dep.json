@@ -7,6 +7,8 @@
         "Includes": [
             "d:\\c unreal engine\\bai5\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\bai5\\definitions.bai5.h",
             "d:\\c unreal engine\\bai5\\source\\bai5\\public\\character\\gascontroller.h",
+            "d:\\c unreal engine\\ue_5.4\\engine\\plugins\\enhancedinput\\source\\enhancedinput\\public\\inputactionvalue.h",
+            "d:\\c unreal engine\\ue_5.4\\engine\\plugins\\enhancedinput\\intermediate\\build\\win64\\unrealeditor\\inc\\enhancedinput\\uht\\inputactionvalue.generated.h",
             "d:\\c unreal engine\\bai5\\intermediate\\build\\win64\\unrealeditor\\inc\\bai5\\uht\\gascontroller.generated.h"
         ],
         "ImportedModules": [],

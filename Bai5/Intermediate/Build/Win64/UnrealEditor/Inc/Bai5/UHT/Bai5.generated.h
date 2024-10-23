@@ -19,13 +19,13 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define CURRENT_FILE_ID FID_Bai5_Source_Bai5_Bai5_h
 
 
-#define FOREACH_ENUM_DEMOABILITIESID(op) \
-	op(DemoAbilitiesID::None) \
-	op(DemoAbilitiesID::Confirm) \
-	op(DemoAbilitiesID::Cancel) 
+#define FOREACH_ENUM_DEMOABILITYID(op) \
+	op(DemoAbilityID::None) \
+	op(DemoAbilityID::Confirm) \
+	op(DemoAbilityID::Cancel) 
 
-enum class DemoAbilitiesID : uint8;
-template<> struct TIsUEnumClass<DemoAbilitiesID> { enum { Value = true }; };
-template<> BAI5_API UEnum* StaticEnum<DemoAbilitiesID>();
+enum class DemoAbilityID : uint8;
+template<> struct TIsUEnumClass<DemoAbilityID> { enum { Value = true }; };
+template<> BAI5_API UEnum* StaticEnum<DemoAbilityID>();
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
