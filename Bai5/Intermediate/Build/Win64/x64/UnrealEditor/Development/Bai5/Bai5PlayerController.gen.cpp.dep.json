@@ -1,13 +1,13 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\c unreal engine\\bai5\\intermediate\\build\\win64\\unrealeditor\\inc\\bai5\\uht\\bai5playercontroller.gen.cpp",
+        "Source": "d:\\github\\amongusue5\\bai5\\intermediate\\build\\win64\\unrealeditor\\inc\\bai5\\uht\\bai5playercontroller.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "d:\\c unreal engine\\bai5\\intermediate\\build\\win64\\x64\\bai5editor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "PCH": "d:\\github\\amongusue5\\bai5\\intermediate\\build\\win64\\x64\\bai5editor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
         "Includes": [
-            "d:\\c unreal engine\\bai5\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\bai5\\definitions.bai5.h",
-            "d:\\c unreal engine\\bai5\\source\\bai5\\bai5playercontroller.h",
-            "d:\\c unreal engine\\bai5\\intermediate\\build\\win64\\unrealeditor\\inc\\bai5\\uht\\bai5playercontroller.generated.h"
+            "d:\\github\\amongusue5\\bai5\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\bai5\\definitions.bai5.h",
+            "d:\\github\\amongusue5\\bai5\\source\\bai5\\bai5playercontroller.h",
+            "d:\\github\\amongusue5\\bai5\\intermediate\\build\\win64\\unrealeditor\\inc\\bai5\\uht\\bai5playercontroller.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

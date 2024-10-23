@@ -158,14 +158,14 @@ ABai5PlayerController::~ABai5PlayerController() {}
 // End Class ABai5PlayerController
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Bai5_Source_Bai5_Bai5PlayerController_h_Statics
+struct Z_CompiledInDeferFile_FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5PlayerController_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_ABai5PlayerController, ABai5PlayerController::StaticClass, TEXT("ABai5PlayerController"), &Z_Registration_Info_UClass_ABai5PlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABai5PlayerController), 1486731221U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Bai5_Source_Bai5_Bai5PlayerController_h_4205108021(TEXT("/Script/Bai5"),
-	Z_CompiledInDeferFile_FID_Bai5_Source_Bai5_Bai5PlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Bai5_Source_Bai5_Bai5PlayerController_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5PlayerController_h_4205108021(TEXT("/Script/Bai5"),
+	Z_CompiledInDeferFile_FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5PlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5PlayerController_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

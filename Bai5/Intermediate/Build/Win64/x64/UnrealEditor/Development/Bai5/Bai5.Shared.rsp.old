@@ -1,4 +1,5 @@
 /I "."
+/I "D:\C Unreal Engine\Bai5\Source\Bai5\Private"
 /I "..\Plugins\Runtime\GameplayAbilities\Intermediate\Build\Win64\UnrealEditor\Inc\GameplayAbilities\UHT"
 /I "..\Plugins\Runtime\GameplayAbilities\Source"
 /I "..\Plugins\Runtime\GameplayAbilities\Source\GameplayAbilities\Public"
@@ -289,6 +290,7 @@
 /I "..\Plugins\Runtime\DataRegistry\Source\DataRegistry\Public"
 /I "D:\C Unreal Engine\Bai5\Intermediate\Build\Win64\UnrealEditor\Inc\Bai5\UHT"
 /I "D:\C Unreal Engine\Bai5\Source"
+/I "D:\C Unreal Engine\Bai5\Source\Bai5\Public"
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\AIModule\UHT"
 /I "Runtime\AIModule\Classes"
 /I "Runtime\AIModule\Public"

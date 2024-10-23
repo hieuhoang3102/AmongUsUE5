@@ -1,15 +1,15 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\c unreal engine\\bai5\\intermediate\\build\\win64\\unrealeditor\\inc\\bai5\\uht\\gascontroller.gen.cpp",
+        "Source": "d:\\github\\amongusue5\\bai5\\intermediate\\build\\win64\\unrealeditor\\inc\\bai5\\uht\\gascontroller.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "d:\\c unreal engine\\bai5\\intermediate\\build\\win64\\x64\\bai5editor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "PCH": "d:\\github\\amongusue5\\bai5\\intermediate\\build\\win64\\x64\\bai5editor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
         "Includes": [
-            "d:\\c unreal engine\\bai5\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\bai5\\definitions.bai5.h",
-            "d:\\c unreal engine\\bai5\\source\\bai5\\public\\character\\gascontroller.h",
-            "d:\\c unreal engine\\ue_5.4\\engine\\plugins\\enhancedinput\\source\\enhancedinput\\public\\inputactionvalue.h",
-            "d:\\c unreal engine\\ue_5.4\\engine\\plugins\\enhancedinput\\intermediate\\build\\win64\\unrealeditor\\inc\\enhancedinput\\uht\\inputactionvalue.generated.h",
-            "d:\\c unreal engine\\bai5\\intermediate\\build\\win64\\unrealeditor\\inc\\bai5\\uht\\gascontroller.generated.h"
+            "d:\\github\\amongusue5\\bai5\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\bai5\\definitions.bai5.h",
+            "d:\\github\\amongusue5\\bai5\\source\\bai5\\public\\character\\gascontroller.h",
+            "d:\\ue_5.4\\engine\\plugins\\enhancedinput\\source\\enhancedinput\\public\\inputactionvalue.h",
+            "d:\\ue_5.4\\engine\\plugins\\enhancedinput\\intermediate\\build\\win64\\unrealeditor\\inc\\enhancedinput\\uht\\inputactionvalue.generated.h",
+            "d:\\github\\amongusue5\\bai5\\intermediate\\build\\win64\\unrealeditor\\inc\\bai5\\uht\\gascontroller.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

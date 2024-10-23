@@ -17,6 +17,7 @@ class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDestroyConponent);
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 UCLASS(Config=Game)
@@ -42,6 +43,34 @@ class ABai5Character : public ACharacter, public IAbilitySystemInterface
 public:
 	ABai5Character();
 
+	virtual void PossessedBy(AController* NewController) override;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "GAS", meta = (AllowPrivateAccess = "true"))
+	UAbilitySystemComponent* AbilitySystemComponent;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "GAS", meta = (AllowPrivateAccess = "true"))
+	UCharacterAttributeSetBase* BasicAttributeSet;
+
+	void SetupASC();
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category= "Input")
+	TSubclassOf<AActor> DeadBody;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category= "Input")
+	UMaterial*DeadMaMat;
+	
+	UFUNCTION()
+	void OnRep_IsDead();
+	
+	// UFUNCTION(Server, Unreliable)
+	// void ServerOnDead(FVector Loc);
+	
+	UPROPERTY(BlueprintReadOnly, Category= "Input")
+	FVector DeadLoc;
+	
+	UPROPERTY(BlueprintAssignable)
+	FDestroyConponent OnIsKilled;
+
 	// Called every frame.
 	virtual void Tick(float DeltaSeconds) override;
 
@@ -64,18 +93,12 @@ protected:
 			
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-	virtual void PossessedBy(AController* NewController) override;
 	
 	// To add mapping context
 	virtual void BeginPlay() override;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "GAS", meta = (AllowPrivateAccess = "true"))
-	UAbilitySystemComponent* AbilitySystemComponent;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "GAS", meta = (AllowPrivateAccess = "true"))
-	UCharacterAttributeSetBase* BasicAttributeSet;
-
+	// void OnHealthChange(const FOnAttributeChangeData& Data);
+	// virtual void GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& OutLifetimeProps) const override;
 
 private:
 	/** Top down camera */
