@@ -182,6 +182,7 @@ void ABai5Character::GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>&
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 	DOREPLIFETIME(ABai5Character, DeadLoc);
+	DOREPLIFETIME(ABai5Character, IsGhost);
 }
 
 void ABai5Character::PossessedBy(AController* NewController)
