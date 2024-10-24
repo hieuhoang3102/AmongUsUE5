@@ -14,15 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BAI5_Bai5Character_generated_h
 
-#define FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_20_DELEGATE \
-BAI5_API void FDestroyConponent_DelegateWrapper(const FMulticastScriptDelegate& DestroyConponent);
-
-
-#define FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_26_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execOnRep_IsDead);
-
-
-#define FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_26_INCLASS_NO_PURE_DECLS \
+#define FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_25_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesABai5Character(); \
 	friend struct Z_Construct_UClass_ABai5Character_Statics; \
@@ -32,7 +24,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<ABai5Character*>(this); }
 
 
-#define FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_26_ENHANCED_CONSTRUCTORS \
+#define FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_25_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ABai5Character(ABai5Character&&); \
@@ -44,13 +36,12 @@ public: \
 	NO_API virtual ~ABai5Character();
 
 
-#define FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_23_PROLOG
-#define FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_26_GENERATED_BODY \
+#define FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_22_PROLOG
+#define FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_25_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_26_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_26_INCLASS_NO_PURE_DECLS \
-	FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_26_ENHANCED_CONSTRUCTORS \
+	FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_25_INCLASS_NO_PURE_DECLS \
+	FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_25_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -58,7 +49,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> BAI5_API UClass* StaticClass<class ABai5Character>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h
+#define CURRENT_FILE_ID FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -1,11 +1,11 @@
-"D:\C Unreal Engine\Bai5\Source\Bai5\Private\Character\GASController.cpp"
-/FI"D:\C Unreal Engine\Bai5\Intermediate\Build\Win64\x64\Bai5Editor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
-/FI"D:\C Unreal Engine\Bai5\Intermediate\Build\Win64\x64\UnrealEditor\Development\Bai5\Definitions.Bai5.h"
-/Yu"D:\C Unreal Engine\Bai5\Intermediate\Build\Win64\x64\Bai5Editor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
-/Fp"D:\C Unreal Engine\Bai5\Intermediate\Build\Win64\x64\Bai5Editor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.pch"
-/Fo"D:\C Unreal Engine\Bai5\Intermediate\Build\Win64\x64\UnrealEditor\Development\Bai5\GASController.cpp.obj"
-/sourceDependencies "D:\C Unreal Engine\Bai5\Intermediate\Build\Win64\x64\UnrealEditor\Development\Bai5\GASController.cpp.dep.json"
-@"D:\C Unreal Engine\Bai5\Intermediate\Build\Win64\x64\UnrealEditor\Development\Bai5\Bai5.Shared.rsp"
+"D:\GitHub\AmongUsUE5\Bai5\Source\Bai5\Private\Character\GASController.cpp"
+/FI"D:\GitHub\AmongUsUE5\Bai5\Intermediate\Build\Win64\x64\Bai5Editor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
+/FI"D:\GitHub\AmongUsUE5\Bai5\Intermediate\Build\Win64\x64\UnrealEditor\Development\Bai5\Definitions.Bai5.h"
+/Yu"D:\GitHub\AmongUsUE5\Bai5\Intermediate\Build\Win64\x64\Bai5Editor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
+/Fp"D:\GitHub\AmongUsUE5\Bai5\Intermediate\Build\Win64\x64\Bai5Editor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.pch"
+/Fo"D:\GitHub\AmongUsUE5\Bai5\Intermediate\Build\Win64\x64\UnrealEditor\Development\Bai5\GASController.cpp.obj"
+/sourceDependencies "D:\GitHub\AmongUsUE5\Bai5\Intermediate\Build\Win64\x64\UnrealEditor\Development\Bai5\GASController.cpp.dep.json"
+@"D:\GitHub\AmongUsUE5\Bai5\Intermediate\Build\Win64\x64\UnrealEditor\Development\Bai5\Bai5.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi

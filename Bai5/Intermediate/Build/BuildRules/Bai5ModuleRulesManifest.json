@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"D:\\GitHub\\AmongUsUE5\\Bai5\\Source\\Bai5\\Bai5.Build.cs",
-		"D:\\GitHub\\AmongUsUE5\\Bai5\\Source\\Bai5.Target.cs",
-		"D:\\GitHub\\AmongUsUE5\\Bai5\\Source\\Bai5Editor.Target.cs"
+		"D:\\GitHub\\UnrealEngine\\AmongUsUE5\\Bai5\\Source\\Bai5\\Bai5.Build.cs",
+		"D:\\GitHub\\UnrealEngine\\AmongUsUE5\\Bai5\\Source\\Bai5.Target.cs",
+		"D:\\GitHub\\UnrealEngine\\AmongUsUE5\\Bai5\\Source\\Bai5Editor.Target.cs"
 	],
 	"EngineVersion": "5.4.4"
 }
