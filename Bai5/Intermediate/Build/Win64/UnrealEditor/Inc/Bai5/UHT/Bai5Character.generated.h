@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BAI5_Bai5Character_generated_h
 
-#define FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_21_DELEGATE \
+#define FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_20_DELEGATE \
 BAI5_API void FDestroyComponent_DelegateWrapper(const FMulticastScriptDelegate& DestroyComponent);
 
 
@@ -36,7 +36,8 @@ public: \
 	enum class ENetFields_Private : uint16 \
 	{ \
 		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
-		DeadLoc=NETFIELD_REP_START, \
+		IsGhost=NETFIELD_REP_START, \
+		DeadLoc, \
 		NETFIELD_REP_END=DeadLoc	}; \
 	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 

@@ -17,8 +17,8 @@ class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
 
-DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDestroyComponent);
+DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 UCLASS(Config=Game)
 class ABai5Character : public ACharacter, public IAbilitySystemInterface
@@ -65,7 +65,16 @@ public:
 	}
 
 	void SetupACS();
+	
+	UPROPERTY(Replicated)
+	bool IsGhost = false;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
+	class USkeletalMesh* Ghost;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
+	class UAnimSequence* AnimGhost;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
 	TSubclassOf<AActor> DeadBody;
 

@@ -18,8 +18,10 @@ COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_ACharacter();
+ENGINE_API UClass* Z_Construct_UClass_UAnimSequence_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UMaterial_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_USkeletalMesh_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputAction_NoRegister();
 ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
@@ -211,6 +213,17 @@ struct Z_Construct_UClass_ABai5Character_Statics
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Bai5Character.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_IsGhost_MetaData[] = {
+		{ "ModuleRelativePath", "Bai5Character.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Ghost_MetaData[] = {
+		{ "Category", "Input" },
+		{ "ModuleRelativePath", "Bai5Character.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AnimGhost_MetaData[] = {
+		{ "Category", "Input" },
+		{ "ModuleRelativePath", "Bai5Character.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DeadBody_MetaData[] = {
 		{ "Category", "Input" },
 		{ "ModuleRelativePath", "Bai5Character.h" },
@@ -257,6 +270,10 @@ struct Z_Construct_UClass_ABai5Character_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_LookAction;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_AbilitySystemComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_BasicAttributeSet;
+	static void NewProp_IsGhost_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_IsGhost;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_Ghost;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_AnimGhost;
 	static const UECodeGen_Private::FClassPropertyParams NewProp_DeadBody;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_DeadMat;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_DeadLoc;
@@ -282,6 +299,13 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABai5Character
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_LookAction = { "LookAction", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, LookAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LookAction_MetaData), NewProp_LookAction_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_AbilitySystemComponent = { "AbilitySystemComponent", nullptr, (EPropertyFlags)0x001000000008001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, AbilitySystemComponent), Z_Construct_UClass_UAbilitySystemComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AbilitySystemComponent_MetaData), NewProp_AbilitySystemComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_BasicAttributeSet = { "BasicAttributeSet", nullptr, (EPropertyFlags)0x001000000008001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, BasicAttributeSet), Z_Construct_UClass_UCharacterAttributeSetBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BasicAttributeSet_MetaData), NewProp_BasicAttributeSet_MetaData) };
+void Z_Construct_UClass_ABai5Character_Statics::NewProp_IsGhost_SetBit(void* Obj)
+{
+	((ABai5Character*)Obj)->IsGhost = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_IsGhost = { "IsGhost", nullptr, (EPropertyFlags)0x0010000000000020, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ABai5Character), &Z_Construct_UClass_ABai5Character_Statics::NewProp_IsGhost_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_IsGhost_MetaData), NewProp_IsGhost_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_Ghost = { "Ghost", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, Ghost), Z_Construct_UClass_USkeletalMesh_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Ghost_MetaData), NewProp_Ghost_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_AnimGhost = { "AnimGhost", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, AnimGhost), Z_Construct_UClass_UAnimSequence_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AnimGhost_MetaData), NewProp_AnimGhost_MetaData) };
 const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_DeadBody = { "DeadBody", nullptr, (EPropertyFlags)0x0014000000000015, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, DeadBody), Z_Construct_UClass_UClass, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DeadBody_MetaData), NewProp_DeadBody_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_DeadMat = { "DeadMat", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, DeadMat), Z_Construct_UClass_UMaterial_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DeadMat_MetaData), NewProp_DeadMat_MetaData) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_DeadLoc = { "DeadLoc", "OnRep_IsDead", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, DeadLoc), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DeadLoc_MetaData), NewProp_DeadLoc_MetaData) };
@@ -295,6 +319,9 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABai5Char
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_LookAction,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_AbilitySystemComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_BasicAttributeSet,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_IsGhost,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_Ghost,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_AnimGhost,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_DeadBody,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_DeadMat,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_DeadLoc,
@@ -340,8 +367,10 @@ template<> BAI5_API UClass* StaticClass<ABai5Character>()
 }
 void ABai5Character::ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const
 {
+	static const FName Name_IsGhost(TEXT("IsGhost"));
 	static const FName Name_DeadLoc(TEXT("DeadLoc"));
 	const bool bIsValid = true
+		&& Name_IsGhost == ClassReps[(int32)ENetFields_Private::IsGhost].Property->GetFName()
 		&& Name_DeadLoc == ClassReps[(int32)ENetFields_Private::DeadLoc].Property->GetFName();
 	checkf(bIsValid, TEXT("UHT Generated Rep Indices do not match runtime populated Rep Indices for properties in ABai5Character"));
 }
@@ -353,10 +382,10 @@ ABai5Character::~ABai5Character() {}
 struct Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABai5Character, ABai5Character::StaticClass, TEXT("ABai5Character"), &Z_Registration_Info_UClass_ABai5Character, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABai5Character), 3588665728U) },
+		{ Z_Construct_UClass_ABai5Character, ABai5Character::StaticClass, TEXT("ABai5Character"), &Z_Registration_Info_UClass_ABai5Character, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABai5Character), 2739594338U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_2363889697(TEXT("/Script/Bai5"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_2800632004(TEXT("/Script/Bai5"),
 	Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

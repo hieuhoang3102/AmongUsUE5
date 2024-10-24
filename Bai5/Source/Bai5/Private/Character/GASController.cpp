@@ -2,7 +2,6 @@
 
 
 #include "Character/GASController.h"
-#include "AbilitySystemComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "Bai5/Bai5Character.h"
@@ -20,7 +19,7 @@ void AGASController::AcknowledgePossession(class APawn* P)
 
 	if (ABai5Character* CharacterBase = Cast<ABai5Character>(P))
 	{
-		CharacterBase->GetAbilitySystemComponent()->InitAbilityActorInfo(CharacterBase, CharacterBase);
+		CharacterBase->SetupACS();
 	}
 }
 
