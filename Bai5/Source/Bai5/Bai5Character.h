@@ -18,6 +18,7 @@ class UInputAction;
 struct FInputActionValue;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDestroyComponent);
 
 UCLASS(Config=Game)
 class ABai5Character : public ACharacter, public IAbilitySystemInterface
@@ -63,6 +64,25 @@ public:
 		return AbilitySystemComponent;
 	}
 
+	void SetupACS();
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
+	TSubclassOf<AActor> DeadBody;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
+	UMaterial* DeadMat;
+
+	UFUNCTION()
+	void OnRep_IsDead();
+
+	UFUNCTION(Server, Unreliable)
+	void ServerOnDead(FVector Loc);
+	
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_IsDead)
+	FVector DeadLoc;
+	
+	UPROPERTY(BlueprintAssignable)
+	FDestroyComponent OnIsKilled;
 protected:
 	/** Called for movement input */
 	void Move(const FInputActionValue& Value);
@@ -76,7 +96,8 @@ protected:
 	// To add mapping context
 	virtual void BeginPlay() override;
 
-
+	void OnHealthChange(const FOnAttributeChangeData& Data);
+	virtual void GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& OutLifetimeProps) const override;
 private:
 	/** Top down camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))

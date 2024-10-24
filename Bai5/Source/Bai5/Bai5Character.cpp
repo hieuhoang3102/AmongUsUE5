@@ -14,6 +14,8 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Materials/Material.h"
 #include "Engine/World.h"
+#include "Kismet/KismetSystemLibrary.h"
+#include "Net/UnrealNetwork.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -59,6 +61,27 @@ ABai5Character::ABai5Character()
 void ABai5Character::Tick(float DeltaSeconds)
 {
     Super::Tick(DeltaSeconds);
+}
+
+void ABai5Character::SetupACS()
+{
+	AbilitySystemComponent->InitAbilityActorInfo(this, this);
+	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(BasicAttributeSet->GetHealthAttribute()).AddUObject(this, &ABai5Character::OnHealthChange);
+}
+
+void ABai5Character::OnRep_IsDead()
+{
+	if (!IsValid(GetController()))
+		SetActorHiddenInGame(true);
+	GetCapsuleComponent()->SetCollisionProfileName(TEXT("Ghost"));
+	GetWorld()->SpawnActor<AActor>(DeadBody ,GetActorTransform());
+}
+
+void ABai5Character::ServerOnDead_Implementation(FVector Loc)
+{
+	DeadLoc = Loc;
+	UKismetSystemLibrary::PrintString(this, DeadLoc.ToString());
+	GetCapsuleComponent()->SetCollisionProfileName(TEXT("Ghost"));
 }
 
 void ABai5Character::Move(const FInputActionValue& Value)
@@ -130,6 +153,22 @@ void ABai5Character::SetupPlayerInputComponent(class UInputComponent* PlayerInpu
 void ABai5Character::BeginPlay()
 {
 	Super::BeginPlay();
+}
+
+void ABai5Character::OnHealthChange(const FOnAttributeChangeData& Data)
+{
+	UKismetSystemLibrary::PrintString(this, GetActorLocation().ToString());
+	FVector LocSend = GetActorLocation();
+	LocSend.Z = 550.f;
+	ServerOnDead(LocSend);
+	GetMesh()->SetMaterial(0, DeadMat);
+}
+
+void ABai5Character::GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+	DOREPLIFETIME(ABai5Character, DeadLoc);
 }
 
 void ABai5Character::PossessedBy(AController* NewController)
