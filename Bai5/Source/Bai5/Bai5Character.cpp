@@ -14,6 +14,8 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Materials/Material.h"
 #include "Engine/World.h"
+#include "GameFramework/GameStateBase.h"
+#include "GameFramework/PlayerState.h"
 #include "Kismet/KismetSystemLibrary.h"
 #include "Net/UnrealNetwork.h"
 
@@ -73,9 +75,20 @@ void ABai5Character::OnRep_IsDead()
 {
 	if (!IsValid(GetController()))
 	{
-		if (!IsGhost)
-			SetActorHiddenInGame(true);
+		SetActorHiddenInGame(true);
+		
+		for (auto temp: GetWorld()->GetGameState()->PlayerArray)
+		{
+			ABai5Character* Ghost = Cast<ABai5Character>(temp->GetPawn());
+			if(Ghost->IsGhost && Ghost != this)
+			{
+				temp->GetPawn()->SetActorHiddenInGame(false);
+			}
+		}
 	}
+	
+	
+	
 	GetCapsuleComponent()->SetCollisionProfileName(TEXT("ThroughWall"));
 	FTransform Temp = GetActorTransform();
 	Temp.SetLocation(DeadLoc);
