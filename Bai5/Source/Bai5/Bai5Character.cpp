@@ -16,6 +16,7 @@
 #include "Engine/World.h"
 #include "GameFramework/GameStateBase.h"
 #include "GameFramework/PlayerState.h"
+#include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetSystemLibrary.h"
 #include "Net/UnrealNetwork.h"
 
@@ -71,36 +72,77 @@ void ABai5Character::SetupACS()
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(BasicAttributeSet->GetHealthAttribute()).AddUObject(this, &ABai5Character::OnHealthChange);
 }
 
+void ABai5Character::DeadBodyReported(ADeadBody* DeadBodyDes)
+{
+	FoundDeadBody.Broadcast(DeadBodyDes);
+}
+
+void ABai5Character::EndDeadBodyReported(ADeadBody* EndDeadBodyDes)
+{
+	EndFoundDeadBody.Broadcast(EndDeadBodyDes);
+}
+
 void ABai5Character::OnRep_IsDead()
 {
-	if (!IsValid(GetController()))
+	if (!IsValid(GetController())) // ai day khac bien thanh ma
 	{
-		SetActorHiddenInGame(true);
-		
-		for (auto temp: GetWorld()->GetGameState()->PlayerArray)
+		APlayerController* LocalController = UGameplayStatics::GetPlayerControllerFromID(GetWorld(), 0);
+		const bool IsLocalControllerValid = IsValid(LocalController);
+		bool IsLocalGhost = false;
+		if (IsLocalControllerValid && IsValid(LocalController->GetPawn()))
+			IsLocalGhost = Cast<ABai5Character>(LocalController->GetPawn())->IsGhost;
+		if (IsLocalControllerValid && IsLocalGhost)
 		{
-			ABai5Character* Ghost = Cast<ABai5Character>(temp->GetPawn());
-			if(Ghost->IsGhost && Ghost != this)
-			{
-				temp->GetPawn()->SetActorHiddenInGame(false);
-			}
+			//UKismetSystemLibrary::PrintString(this, this->GetName());
+			SetActorHiddenInGame(false); // se hien hinh
+		}
+		else
+		{
+			//UKismetSystemLibrary::PrintString(this, this->GetName());
+			SetActorHiddenInGame(true); // se bi tang hinh
 		}
 	}
+	else // neu day la luc minh bi bien thanh ma
+	{
+		for (auto Temp: GetWorld()->GetGameState()->PlayerArray)
+		{
+			ABai5Character* Ghost = Cast<ABai5Character>(Temp->GetPawn());
+			Ghost->SetActorHiddenInGame(false); // tat ca ma khac hien hinh
+		}
+	}
+
+	if (!bHasSpawnedDeadBody)
+	{
+		bHasSpawnedDeadBody = true; // Đánh dấu đã spawn để tránh spawn thêm lần nữa
+
+		// Logic để spawn xác chết chỉ một lần
+		FTransform Temp = GetActorTransform();
+		Temp.SetLocation(DeadLoc);
+		GetWorld()->SpawnActor<AActor>(DeadBody, Temp);
+
+		// Thiết lập ngoại hình của "ma"
+		GetCapsuleComponent()->SetCollisionProfileName(TEXT("ThroughWall"));
+		GetMesh()->SetSkeletalMesh(Ghosts);
+		GetMesh()->SetRelativeLocation({0.f, 258.4f, -74.7f});
+		GetMesh()->SetAnimationMode(EAnimationMode::AnimationSingleNode);
+		GetMesh()->SetAnimation(AnimGhost);
+		GetMesh()->Play(true);
+		GetMesh()->SetMaterial(0, DeadMat);
+	}
 	
-	
-	
-	GetCapsuleComponent()->SetCollisionProfileName(TEXT("ThroughWall"));
-	FTransform Temp = GetActorTransform();
-	Temp.SetLocation(DeadLoc);
-	GetWorld()->SpawnActor<AActor>(DeadBody ,Temp);
 }
 
 void ABai5Character::ServerOnDead_Implementation(FVector Loc)
 {
 	DeadLoc = Loc;
 	IsGhost = true;
-	UKismetSystemLibrary::PrintString(this, DeadLoc.ToString());
 	GetCapsuleComponent()->SetCollisionProfileName(TEXT("ThroughWall"));
+	// GetMesh()->SetSkeletalMesh(Ghosts);
+	// GetMesh()->SetRelativeLocation({0.f, 258.4f, -74.7f});
+	// GetMesh()->SetAnimationMode(EAnimationMode::AnimationSingleNode);
+	// GetMesh()->SetAnimation(AnimGhost);
+	// GetMesh()->Play(true);
+	// GetMesh()->SetMaterial(0, DeadMat);
 }
 
 void ABai5Character::Move(const FInputActionValue& Value)
@@ -181,14 +223,6 @@ void ABai5Character::OnHealthChange(const FOnAttributeChangeData& Data)
 	LocSend.Z = 120.f;
 	ServerOnDead(LocSend);
 	
-	GetMesh()->SetSkeletalMesh(Ghost);
-	GetMesh()->SetRelativeLocation({0.f,258.4f, -74.7f});
-
-	GetMesh()->SetAnimationMode(EAnimationMode::AnimationSingleNode);
-	GetMesh()->SetAnimation(AnimGhost);
-	GetMesh()->Play(true);
-	GetMesh()->SetMaterial(0, DeadMat);
-	// (X=0.000000,Y=258.333329,Z=-74.666667)
 }
 
 void ABai5Character::GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& OutLifetimeProps) const

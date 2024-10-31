@@ -17,7 +17,8 @@ class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDestroyComponent);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDestroyComponent, ADeadBody*, DeadBodyDes);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEndDestroyComponent, ADeadBody*, EndDeadBodyDes);
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 UCLASS(Config=Game)
@@ -66,11 +67,15 @@ public:
 
 	void SetupACS();
 	
-	UPROPERTY(Replicated)
+	void DeadBodyReported(ADeadBody* DeadBodyDes);
+
+	void EndDeadBodyReported(ADeadBody* EndDeadBodyDes);
+	
+	UPROPERTY(EditAnyWhere, BlueprintReadOnly, Replicated)
 	bool IsGhost = false;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
-	class USkeletalMesh* Ghost;
+	class USkeletalMesh* Ghosts;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
 	class UAnimSequence* AnimGhost;
@@ -89,9 +94,16 @@ public:
 	
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_IsDead)
 	FVector DeadLoc;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)//, Category = "State", meta = (AllowPrivateAccess = "true"))
+	bool bHasSpawnedDeadBody = false;
 	
 	UPROPERTY(BlueprintAssignable)
-	FDestroyComponent OnIsKilled;
+	FDestroyComponent FoundDeadBody;
+
+	UPROPERTY(BlueprintAssignable)
+	FEndDestroyComponent EndFoundDeadBody;
+
 protected:
 	/** Called for movement input */
 	void Move(const FInputActionValue& Value);

@@ -12,8 +12,10 @@ void EmptyLinkFunctionForGeneratedCodeBai5Character() {}
 // Begin Cross Module References
 BAI5_API UClass* Z_Construct_UClass_ABai5Character();
 BAI5_API UClass* Z_Construct_UClass_ABai5Character_NoRegister();
+BAI5_API UClass* Z_Construct_UClass_ADeadBody_NoRegister();
 BAI5_API UClass* Z_Construct_UClass_UCharacterAttributeSetBase_NoRegister();
 BAI5_API UFunction* Z_Construct_UDelegateFunction_Bai5_DestroyComponent__DelegateSignature();
+BAI5_API UFunction* Z_Construct_UDelegateFunction_Bai5_EndDestroyComponent__DelegateSignature();
 COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
@@ -33,14 +35,26 @@ UPackage* Z_Construct_UPackage__Script_Bai5();
 // Begin Delegate FDestroyComponent
 struct Z_Construct_UDelegateFunction_Bai5_DestroyComponent__DelegateSignature_Statics
 {
+	struct _Script_Bai5_eventDestroyComponent_Parms
+	{
+		ADeadBody* DeadBodyDes;
+	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "ModuleRelativePath", "Bai5Character.h" },
 	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_DeadBodyDes;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_Bai5_DestroyComponent__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_Bai5, nullptr, "DestroyComponent__DelegateSignature", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Bai5_DestroyComponent__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_Bai5_DestroyComponent__DelegateSignature_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UDelegateFunction_Bai5_DestroyComponent__DelegateSignature_Statics::NewProp_DeadBodyDes = { "DeadBodyDes", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_Bai5_eventDestroyComponent_Parms, DeadBodyDes), Z_Construct_UClass_ADeadBody_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_Bai5_DestroyComponent__DelegateSignature_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_Bai5_DestroyComponent__DelegateSignature_Statics::NewProp_DeadBodyDes,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Bai5_DestroyComponent__DelegateSignature_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_Bai5_DestroyComponent__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_Bai5, nullptr, "DestroyComponent__DelegateSignature", nullptr, nullptr, Z_Construct_UDelegateFunction_Bai5_DestroyComponent__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Bai5_DestroyComponent__DelegateSignature_Statics::PropPointers), sizeof(Z_Construct_UDelegateFunction_Bai5_DestroyComponent__DelegateSignature_Statics::_Script_Bai5_eventDestroyComponent_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Bai5_DestroyComponent__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_Bai5_DestroyComponent__DelegateSignature_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UDelegateFunction_Bai5_DestroyComponent__DelegateSignature_Statics::_Script_Bai5_eventDestroyComponent_Parms) < MAX_uint16);
 UFunction* Z_Construct_UDelegateFunction_Bai5_DestroyComponent__DelegateSignature()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -50,11 +64,61 @@ UFunction* Z_Construct_UDelegateFunction_Bai5_DestroyComponent__DelegateSignatur
 	}
 	return ReturnFunction;
 }
-void FDestroyComponent_DelegateWrapper(const FMulticastScriptDelegate& DestroyComponent)
+void FDestroyComponent_DelegateWrapper(const FMulticastScriptDelegate& DestroyComponent, ADeadBody* DeadBodyDes)
 {
-	DestroyComponent.ProcessMulticastDelegate<UObject>(NULL);
+	struct _Script_Bai5_eventDestroyComponent_Parms
+	{
+		ADeadBody* DeadBodyDes;
+	};
+	_Script_Bai5_eventDestroyComponent_Parms Parms;
+	Parms.DeadBodyDes=DeadBodyDes;
+	DestroyComponent.ProcessMulticastDelegate<UObject>(&Parms);
 }
 // End Delegate FDestroyComponent
+
+// Begin Delegate FEndDestroyComponent
+struct Z_Construct_UDelegateFunction_Bai5_EndDestroyComponent__DelegateSignature_Statics
+{
+	struct _Script_Bai5_eventEndDestroyComponent_Parms
+	{
+		ADeadBody* EndDeadBodyDes;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Bai5Character.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_EndDeadBodyDes;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UDelegateFunction_Bai5_EndDestroyComponent__DelegateSignature_Statics::NewProp_EndDeadBodyDes = { "EndDeadBodyDes", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_Bai5_eventEndDestroyComponent_Parms, EndDeadBodyDes), Z_Construct_UClass_ADeadBody_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_Bai5_EndDestroyComponent__DelegateSignature_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_Bai5_EndDestroyComponent__DelegateSignature_Statics::NewProp_EndDeadBodyDes,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Bai5_EndDestroyComponent__DelegateSignature_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_Bai5_EndDestroyComponent__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_Bai5, nullptr, "EndDestroyComponent__DelegateSignature", nullptr, nullptr, Z_Construct_UDelegateFunction_Bai5_EndDestroyComponent__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Bai5_EndDestroyComponent__DelegateSignature_Statics::PropPointers), sizeof(Z_Construct_UDelegateFunction_Bai5_EndDestroyComponent__DelegateSignature_Statics::_Script_Bai5_eventEndDestroyComponent_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Bai5_EndDestroyComponent__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_Bai5_EndDestroyComponent__DelegateSignature_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UDelegateFunction_Bai5_EndDestroyComponent__DelegateSignature_Statics::_Script_Bai5_eventEndDestroyComponent_Parms) < MAX_uint16);
+UFunction* Z_Construct_UDelegateFunction_Bai5_EndDestroyComponent__DelegateSignature()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_Bai5_EndDestroyComponent__DelegateSignature_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+void FEndDestroyComponent_DelegateWrapper(const FMulticastScriptDelegate& EndDestroyComponent, ADeadBody* EndDeadBodyDes)
+{
+	struct _Script_Bai5_eventEndDestroyComponent_Parms
+	{
+		ADeadBody* EndDeadBodyDes;
+	};
+	_Script_Bai5_eventEndDestroyComponent_Parms Parms;
+	Parms.EndDeadBodyDes=EndDeadBodyDes;
+	EndDestroyComponent.ProcessMulticastDelegate<UObject>(&Parms);
+}
+// End Delegate FEndDestroyComponent
 
 // Begin Class ABai5Character Function OnRep_IsDead
 struct Z_Construct_UFunction_ABai5Character_OnRep_IsDead_Statics
@@ -214,9 +278,10 @@ struct Z_Construct_UClass_ABai5Character_Statics
 		{ "ModuleRelativePath", "Bai5Character.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_IsGhost_MetaData[] = {
+		{ "Category", "Bai5Character" },
 		{ "ModuleRelativePath", "Bai5Character.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Ghost_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Ghosts_MetaData[] = {
 		{ "Category", "Input" },
 		{ "ModuleRelativePath", "Bai5Character.h" },
 	};
@@ -236,7 +301,20 @@ struct Z_Construct_UClass_ABai5Character_Statics
 		{ "Category", "Bai5Character" },
 		{ "ModuleRelativePath", "Bai5Character.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OnIsKilled_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bHasSpawnedDeadBody_MetaData[] = {
+		{ "Category", "Bai5Character" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//, Category = \"State\", meta = (AllowPrivateAccess = \"true\"))\n" },
+#endif
+		{ "ModuleRelativePath", "Bai5Character.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", ", Category = \"State\", meta = (AllowPrivateAccess = \"true\"))" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FoundDeadBody_MetaData[] = {
+		{ "ModuleRelativePath", "Bai5Character.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_EndFoundDeadBody_MetaData[] = {
 		{ "ModuleRelativePath", "Bai5Character.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TopDownCameraComponent_MetaData[] = {
@@ -272,12 +350,15 @@ struct Z_Construct_UClass_ABai5Character_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_BasicAttributeSet;
 	static void NewProp_IsGhost_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_IsGhost;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_Ghost;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_Ghosts;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_AnimGhost;
 	static const UECodeGen_Private::FClassPropertyParams NewProp_DeadBody;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_DeadMat;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_DeadLoc;
-	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnIsKilled;
+	static void NewProp_bHasSpawnedDeadBody_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bHasSpawnedDeadBody;
+	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_FoundDeadBody;
+	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_EndFoundDeadBody;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_TopDownCameraComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CameraBoom;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
@@ -303,13 +384,19 @@ void Z_Construct_UClass_ABai5Character_Statics::NewProp_IsGhost_SetBit(void* Obj
 {
 	((ABai5Character*)Obj)->IsGhost = 1;
 }
-const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_IsGhost = { "IsGhost", nullptr, (EPropertyFlags)0x0010000000000020, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ABai5Character), &Z_Construct_UClass_ABai5Character_Statics::NewProp_IsGhost_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_IsGhost_MetaData), NewProp_IsGhost_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_Ghost = { "Ghost", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, Ghost), Z_Construct_UClass_USkeletalMesh_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Ghost_MetaData), NewProp_Ghost_MetaData) };
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_IsGhost = { "IsGhost", nullptr, (EPropertyFlags)0x0010000000000035, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ABai5Character), &Z_Construct_UClass_ABai5Character_Statics::NewProp_IsGhost_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_IsGhost_MetaData), NewProp_IsGhost_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_Ghosts = { "Ghosts", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, Ghosts), Z_Construct_UClass_USkeletalMesh_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Ghosts_MetaData), NewProp_Ghosts_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_AnimGhost = { "AnimGhost", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, AnimGhost), Z_Construct_UClass_UAnimSequence_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AnimGhost_MetaData), NewProp_AnimGhost_MetaData) };
 const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_DeadBody = { "DeadBody", nullptr, (EPropertyFlags)0x0014000000000015, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, DeadBody), Z_Construct_UClass_UClass, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DeadBody_MetaData), NewProp_DeadBody_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_DeadMat = { "DeadMat", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, DeadMat), Z_Construct_UClass_UMaterial_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DeadMat_MetaData), NewProp_DeadMat_MetaData) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_DeadLoc = { "DeadLoc", "OnRep_IsDead", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, DeadLoc), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DeadLoc_MetaData), NewProp_DeadLoc_MetaData) };
-const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_OnIsKilled = { "OnIsKilled", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, OnIsKilled), Z_Construct_UDelegateFunction_Bai5_DestroyComponent__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnIsKilled_MetaData), NewProp_OnIsKilled_MetaData) }; // 1456499077
+void Z_Construct_UClass_ABai5Character_Statics::NewProp_bHasSpawnedDeadBody_SetBit(void* Obj)
+{
+	((ABai5Character*)Obj)->bHasSpawnedDeadBody = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_bHasSpawnedDeadBody = { "bHasSpawnedDeadBody", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ABai5Character), &Z_Construct_UClass_ABai5Character_Statics::NewProp_bHasSpawnedDeadBody_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bHasSpawnedDeadBody_MetaData), NewProp_bHasSpawnedDeadBody_MetaData) };
+const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_FoundDeadBody = { "FoundDeadBody", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, FoundDeadBody), Z_Construct_UDelegateFunction_Bai5_DestroyComponent__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FoundDeadBody_MetaData), NewProp_FoundDeadBody_MetaData) }; // 3018756824
+const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_EndFoundDeadBody = { "EndFoundDeadBody", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, EndFoundDeadBody), Z_Construct_UDelegateFunction_Bai5_EndDestroyComponent__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_EndFoundDeadBody_MetaData), NewProp_EndFoundDeadBody_MetaData) }; // 2972745647
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_TopDownCameraComponent = { "TopDownCameraComponent", nullptr, (EPropertyFlags)0x00400000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, TopDownCameraComponent), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TopDownCameraComponent_MetaData), NewProp_TopDownCameraComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_CameraBoom = { "CameraBoom", nullptr, (EPropertyFlags)0x00400000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, CameraBoom), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CameraBoom_MetaData), NewProp_CameraBoom_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABai5Character_Statics::PropPointers[] = {
@@ -320,12 +407,14 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABai5Char
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_AbilitySystemComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_BasicAttributeSet,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_IsGhost,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_Ghost,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_Ghosts,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_AnimGhost,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_DeadBody,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_DeadMat,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_DeadLoc,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_OnIsKilled,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_bHasSpawnedDeadBody,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_FoundDeadBody,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_EndFoundDeadBody,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_TopDownCameraComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_CameraBoom,
 };
@@ -382,10 +471,10 @@ ABai5Character::~ABai5Character() {}
 struct Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABai5Character, ABai5Character::StaticClass, TEXT("ABai5Character"), &Z_Registration_Info_UClass_ABai5Character, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABai5Character), 2739594338U) },
+		{ Z_Construct_UClass_ABai5Character, ABai5Character::StaticClass, TEXT("ABai5Character"), &Z_Registration_Info_UClass_ABai5Character, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABai5Character), 1880797223U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_2800632004(TEXT("/Script/Bai5"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_2061405269(TEXT("/Script/Bai5"),
 	Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

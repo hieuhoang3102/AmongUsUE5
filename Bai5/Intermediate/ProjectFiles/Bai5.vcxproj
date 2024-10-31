@@ -277,6 +277,8 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\Bai5\Bai5PlayerController.h"/>
+    <ClCompile Include="..\..\Source\Bai5\DeadBody.cpp" />
+    <ClCompile Include="..\..\Source\Bai5\MyClass.cpp" />
     <ClCompile Include="..\..\Source\Bai5\Private\DemoAssetManager.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -295,6 +297,8 @@
     <ClCompile Include="..\..\Source\Bai5\Private\Character\Abilities\AttributeSets\CharacterAttributeSetBase.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClInclude Include="..\..\Source\Bai5\DeadBody.h" />
+    <ClInclude Include="..\..\Source\Bai5\MyClass.h" />
     <ClInclude Include="..\..\Source\Bai5\Public\DemoAssetManager.h"/>
     <ClInclude Include="..\..\Source\Bai5\Public\Character\DemoCharacterBase.h"/>
     <ClInclude Include="..\..\Source\Bai5\Public\Character\GASController.h"/>
