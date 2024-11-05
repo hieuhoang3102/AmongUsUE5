@@ -468,14 +468,14 @@ ABai5Character::~ABai5Character() {}
 // End Class ABai5Character
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics
+struct Z_CompiledInDeferFile_FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_ABai5Character, ABai5Character::StaticClass, TEXT("ABai5Character"), &Z_Registration_Info_UClass_ABai5Character, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABai5Character), 1880797223U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_2061405269(TEXT("/Script/Bai5"),
-	Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_2061405269(TEXT("/Script/Bai5"),
+	Z_CompiledInDeferFile_FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

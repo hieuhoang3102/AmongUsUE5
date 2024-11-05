@@ -12,7 +12,6 @@
       <Filter>Source</Filter>
     </None>
     <None Include="..\..\.vsconfig" />
-    <None Include="..\..\Bai5.sln.DotSettings.user" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -62,6 +61,12 @@
       <Filter>Source\Bai5</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Bai5\Bai5PlayerController.h">
+      <Filter>Source\Bai5</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Bai5\DeadBody.cpp">
+      <Filter>Source\Bai5</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Bai5\DeadBody.h">
       <Filter>Source\Bai5</Filter>
     </ClInclude>
     <Filter Include="Source\Bai5\Private">

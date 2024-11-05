@@ -72,15 +72,15 @@ UEnum* Z_Construct_UEnum_Bai5_DemoAbilityID()
 // End Enum DemoAbilityID
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5_h_Statics
+struct Z_CompiledInDeferFile_FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
 		{ DemoAbilityID_StaticEnum, TEXT("DemoAbilityID"), &Z_Registration_Info_UEnum_DemoAbilityID, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 4021609105U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5_h_464717989(TEXT("/Script/Bai5"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5_h_464717989(TEXT("/Script/Bai5"),
 	nullptr, 0,
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5_h_Statics::EnumInfo));
+	Z_CompiledInDeferFile_FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5_h_Statics::EnumInfo));
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
