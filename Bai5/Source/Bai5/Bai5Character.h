@@ -71,8 +71,11 @@ public:
 
 	void EndDeadBodyReported(ADeadBody* EndDeadBodyDes);
 	
-	UPROPERTY(EditAnyWhere, BlueprintReadOnly, Replicated)
+	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Replicated)
 	bool IsGhost = false;
+
+	UPROPERTY(BlueprintReadWrite, ReplicatedUsing = OnRep_KillByVote)
+	bool IsGhostByVote;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
 	class USkeletalMesh* Ghosts;
@@ -89,6 +92,9 @@ public:
 	UFUNCTION()
 	void OnRep_IsDead();
 
+	UFUNCTION()
+	void OnRep_KillByVote();
+	
 	UFUNCTION(Server, Unreliable)
 	void ServerOnDead(FVector Loc);
 	

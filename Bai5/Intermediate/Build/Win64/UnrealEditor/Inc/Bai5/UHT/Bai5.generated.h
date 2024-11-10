@@ -16,7 +16,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define BAI5_Bai5_generated_h
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5_h
+#define CURRENT_FILE_ID FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5_h
 
 
 #define FOREACH_ENUM_DEMOABILITYID(op) \

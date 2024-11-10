@@ -149,6 +149,35 @@ DEFINE_FUNCTION(ABai5Character::execOnRep_IsDead)
 }
 // End Class ABai5Character Function OnRep_IsDead
 
+// Begin Class ABai5Character Function OnRep_KillByVote
+struct Z_Construct_UFunction_ABai5Character_OnRep_KillByVote_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Bai5Character.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABai5Character_OnRep_KillByVote_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABai5Character, nullptr, "OnRep_KillByVote", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABai5Character_OnRep_KillByVote_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABai5Character_OnRep_KillByVote_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ABai5Character_OnRep_KillByVote()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABai5Character_OnRep_KillByVote_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABai5Character::execOnRep_KillByVote)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->OnRep_KillByVote();
+	P_NATIVE_END;
+}
+// End Class ABai5Character Function OnRep_KillByVote
+
 // Begin Class ABai5Character Function ServerOnDead
 struct Bai5Character_eventServerOnDead_Parms
 {
@@ -204,6 +233,7 @@ void ABai5Character::StaticRegisterNativesABai5Character()
 	UClass* Class = ABai5Character::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "OnRep_IsDead", &ABai5Character::execOnRep_IsDead },
+		{ "OnRep_KillByVote", &ABai5Character::execOnRep_KillByVote },
 		{ "ServerOnDead", &ABai5Character::execServerOnDead },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -281,6 +311,10 @@ struct Z_Construct_UClass_ABai5Character_Statics
 		{ "Category", "Bai5Character" },
 		{ "ModuleRelativePath", "Bai5Character.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_IsGhostByVote_MetaData[] = {
+		{ "Category", "Bai5Character" },
+		{ "ModuleRelativePath", "Bai5Character.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Ghosts_MetaData[] = {
 		{ "Category", "Input" },
 		{ "ModuleRelativePath", "Bai5Character.h" },
@@ -350,6 +384,8 @@ struct Z_Construct_UClass_ABai5Character_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_BasicAttributeSet;
 	static void NewProp_IsGhost_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_IsGhost;
+	static void NewProp_IsGhostByVote_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_IsGhostByVote;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Ghosts;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_AnimGhost;
 	static const UECodeGen_Private::FClassPropertyParams NewProp_DeadBody;
@@ -365,6 +401,7 @@ struct Z_Construct_UClass_ABai5Character_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_ABai5Character_OnRep_IsDead, "OnRep_IsDead" }, // 364199108
+		{ &Z_Construct_UFunction_ABai5Character_OnRep_KillByVote, "OnRep_KillByVote" }, // 1011278121
 		{ &Z_Construct_UFunction_ABai5Character_ServerOnDead, "ServerOnDead" }, // 1977235306
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -384,7 +421,12 @@ void Z_Construct_UClass_ABai5Character_Statics::NewProp_IsGhost_SetBit(void* Obj
 {
 	((ABai5Character*)Obj)->IsGhost = 1;
 }
-const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_IsGhost = { "IsGhost", nullptr, (EPropertyFlags)0x0010000000000035, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ABai5Character), &Z_Construct_UClass_ABai5Character_Statics::NewProp_IsGhost_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_IsGhost_MetaData), NewProp_IsGhost_MetaData) };
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_IsGhost = { "IsGhost", nullptr, (EPropertyFlags)0x0010000000000025, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ABai5Character), &Z_Construct_UClass_ABai5Character_Statics::NewProp_IsGhost_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_IsGhost_MetaData), NewProp_IsGhost_MetaData) };
+void Z_Construct_UClass_ABai5Character_Statics::NewProp_IsGhostByVote_SetBit(void* Obj)
+{
+	((ABai5Character*)Obj)->IsGhostByVote = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_IsGhostByVote = { "IsGhostByVote", "OnRep_KillByVote", (EPropertyFlags)0x0010000100000024, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ABai5Character), &Z_Construct_UClass_ABai5Character_Statics::NewProp_IsGhostByVote_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_IsGhostByVote_MetaData), NewProp_IsGhostByVote_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_Ghosts = { "Ghosts", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, Ghosts), Z_Construct_UClass_USkeletalMesh_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Ghosts_MetaData), NewProp_Ghosts_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_AnimGhost = { "AnimGhost", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, AnimGhost), Z_Construct_UClass_UAnimSequence_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AnimGhost_MetaData), NewProp_AnimGhost_MetaData) };
 const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ABai5Character_Statics::NewProp_DeadBody = { "DeadBody", nullptr, (EPropertyFlags)0x0014000000000015, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABai5Character, DeadBody), Z_Construct_UClass_UClass, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DeadBody_MetaData), NewProp_DeadBody_MetaData) };
@@ -407,6 +449,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABai5Char
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_AbilitySystemComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_BasicAttributeSet,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_IsGhost,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_IsGhostByVote,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_Ghosts,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_AnimGhost,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABai5Character_Statics::NewProp_DeadBody,
@@ -457,9 +500,11 @@ template<> BAI5_API UClass* StaticClass<ABai5Character>()
 void ABai5Character::ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const
 {
 	static const FName Name_IsGhost(TEXT("IsGhost"));
+	static const FName Name_IsGhostByVote(TEXT("IsGhostByVote"));
 	static const FName Name_DeadLoc(TEXT("DeadLoc"));
 	const bool bIsValid = true
 		&& Name_IsGhost == ClassReps[(int32)ENetFields_Private::IsGhost].Property->GetFName()
+		&& Name_IsGhostByVote == ClassReps[(int32)ENetFields_Private::IsGhostByVote].Property->GetFName()
 		&& Name_DeadLoc == ClassReps[(int32)ENetFields_Private::DeadLoc].Property->GetFName();
 	checkf(bIsValid, TEXT("UHT Generated Rep Indices do not match runtime populated Rep Indices for properties in ABai5Character"));
 }
@@ -468,14 +513,14 @@ ABai5Character::~ABai5Character() {}
 // End Class ABai5Character
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics
+struct Z_CompiledInDeferFile_FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABai5Character, ABai5Character::StaticClass, TEXT("ABai5Character"), &Z_Registration_Info_UClass_ABai5Character, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABai5Character), 1880797223U) },
+		{ Z_Construct_UClass_ABai5Character, ABai5Character::StaticClass, TEXT("ABai5Character"), &Z_Registration_Info_UClass_ABai5Character, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABai5Character), 3764437703U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_2061405269(TEXT("/Script/Bai5"),
-	Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_2705309023(TEXT("/Script/Bai5"),
+	Z_CompiledInDeferFile_FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

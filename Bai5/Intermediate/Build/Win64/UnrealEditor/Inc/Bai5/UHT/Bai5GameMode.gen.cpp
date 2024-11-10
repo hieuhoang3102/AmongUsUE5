@@ -78,14 +78,14 @@ ABai5GameMode::~ABai5GameMode() {}
 // End Class ABai5GameMode
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5GameMode_h_Statics
+struct Z_CompiledInDeferFile_FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5GameMode_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_ABai5GameMode, ABai5GameMode::StaticClass, TEXT("ABai5GameMode"), &Z_Registration_Info_UClass_ABai5GameMode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABai5GameMode), 1091381910U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5GameMode_h_1691565236(TEXT("/Script/Bai5"),
-	Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5GameMode_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5GameMode_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5GameMode_h_1691565236(TEXT("/Script/Bai5"),
+	Z_CompiledInDeferFile_FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5GameMode_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5GameMode_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

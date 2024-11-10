@@ -132,6 +132,36 @@ void ABai5Character::OnRep_IsDead()
 	
 }
 
+void ABai5Character::OnRep_KillByVote()
+{
+	if (!IsValid(GetController())) // ai day khac bien thanh ma
+	{
+		APlayerController* LocalController = UGameplayStatics::GetPlayerControllerFromID(GetWorld(), 0);
+		const bool IsLocalControllerValid = IsValid(LocalController);
+		bool IsLocalGhost = false;
+		if (IsLocalControllerValid && IsValid(LocalController->GetPawn()))
+			IsLocalGhost = Cast<ABai5Character>(LocalController->GetPawn())->IsGhost;
+		if (IsLocalControllerValid && IsLocalGhost)
+		{
+			SetActorHiddenInGame(false); // se hien hinh
+		}
+		else
+		{
+			SetActorHiddenInGame(true); // se bi tang hinh
+		}
+	}
+	else // neu day la luc minh bi bien thanh ma
+	{
+		for (auto Temp: GetWorld()->GetGameState()->PlayerArray)
+		{
+			ABai5Character* Ghost = Cast<ABai5Character>(Temp->GetPawn());
+			Ghost->SetActorHiddenInGame(false); // tat ca ma khac hien hinh
+		}
+	}
+	GetMesh()->SetMaterial(0, DeadMat);
+	GetCapsuleComponent()->SetCollisionProfileName(TEXT("ThroughWall"));
+}
+
 void ABai5Character::ServerOnDead_Implementation(FVector Loc)
 {
 	DeadLoc = Loc;
@@ -230,6 +260,7 @@ void ABai5Character::GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>&
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 	DOREPLIFETIME(ABai5Character, DeadLoc);
 	DOREPLIFETIME(ABai5Character, IsGhost);
+	DOREPLIFETIME(ABai5Character, IsGhostByVote);
 }
 
 void ABai5Character::PossessedBy(AController* NewController)
