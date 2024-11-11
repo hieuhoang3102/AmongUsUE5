@@ -1,11 +1,11 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\github\\amongusue5\\bai5\\intermediate\\build\\win64\\unrealeditor\\inc\\bai5\\uht\\bai5.init.gen.cpp",
+        "Source": "d:\\github\\unrealengine\\amongusue5\\bai5\\intermediate\\build\\win64\\unrealeditor\\inc\\bai5\\uht\\bai5.init.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "d:\\github\\amongusue5\\bai5\\intermediate\\build\\win64\\x64\\bai5editor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "PCH": "d:\\github\\unrealengine\\amongusue5\\bai5\\intermediate\\build\\win64\\x64\\bai5editor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
         "Includes": [
-            "d:\\github\\amongusue5\\bai5\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\bai5\\definitions.bai5.h"
+            "d:\\github\\unrealengine\\amongusue5\\bai5\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\bai5\\definitions.bai5.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

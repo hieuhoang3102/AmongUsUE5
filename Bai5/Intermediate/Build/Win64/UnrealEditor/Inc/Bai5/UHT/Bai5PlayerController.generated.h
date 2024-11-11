@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BAI5_Bai5PlayerController_generated_h
 
-#define FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5PlayerController_h_20_INCLASS_NO_PURE_DECLS \
+#define FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5PlayerController_h_20_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesABai5PlayerController(); \
 	friend struct Z_Construct_UClass_ABai5PlayerController_Statics; \
@@ -23,7 +23,7 @@ public: \
 	DECLARE_SERIALIZER(ABai5PlayerController)
 
 
-#define FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5PlayerController_h_20_ENHANCED_CONSTRUCTORS \
+#define FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5PlayerController_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ABai5PlayerController(ABai5PlayerController&&); \
@@ -35,12 +35,12 @@ public: \
 	NO_API virtual ~ABai5PlayerController();
 
 
-#define FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5PlayerController_h_17_PROLOG
-#define FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5PlayerController_h_20_GENERATED_BODY \
+#define FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5PlayerController_h_17_PROLOG
+#define FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5PlayerController_h_20_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5PlayerController_h_20_INCLASS_NO_PURE_DECLS \
-	FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5PlayerController_h_20_ENHANCED_CONSTRUCTORS \
+	FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5PlayerController_h_20_INCLASS_NO_PURE_DECLS \
+	FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5PlayerController_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -48,7 +48,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> BAI5_API UClass* StaticClass<class ABai5PlayerController>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_GitHub_AmongUsUE5_Bai5_Source_Bai5_Bai5PlayerController_h
+#define CURRENT_FILE_ID FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5PlayerController_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
