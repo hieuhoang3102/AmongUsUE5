@@ -313,7 +313,13 @@ struct Z_Construct_UClass_ABai5Character_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_IsGhostByVote_MetaData[] = {
 		{ "Category", "Bai5Character" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//ReplicatedUsing = OnRep_KillByVote\n" },
+#endif
 		{ "ModuleRelativePath", "Bai5Character.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "ReplicatedUsing = OnRep_KillByVote" },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Ghosts_MetaData[] = {
 		{ "Category", "Input" },
@@ -516,10 +522,10 @@ ABai5Character::~ABai5Character() {}
 struct Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABai5Character, ABai5Character::StaticClass, TEXT("ABai5Character"), &Z_Registration_Info_UClass_ABai5Character, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABai5Character), 3764437703U) },
+		{ Z_Construct_UClass_ABai5Character, ABai5Character::StaticClass, TEXT("ABai5Character"), &Z_Registration_Info_UClass_ABai5Character, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABai5Character), 2016521596U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_2705309023(TEXT("/Script/Bai5"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_2334987655(TEXT("/Script/Bai5"),
 	Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_UnrealEngine_AmongUsUE5_Bai5_Source_Bai5_Bai5Character_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

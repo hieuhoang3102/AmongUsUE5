@@ -74,8 +74,9 @@ public:
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Replicated)
 	bool IsGhost = false;
 
+//ReplicatedUsing = OnRep_KillByVote
 	UPROPERTY(BlueprintReadWrite, ReplicatedUsing = OnRep_KillByVote)
-	bool IsGhostByVote;
+	bool IsGhostByVote = false;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
 	class USkeletalMesh* Ghosts;

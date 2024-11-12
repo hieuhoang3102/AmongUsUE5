@@ -74,11 +74,13 @@ void ABai5Character::SetupACS()
 
 void ABai5Character::DeadBodyReported(ADeadBody* DeadBodyDes)
 {
+	if(!IsGhost)
 	FoundDeadBody.Broadcast(DeadBodyDes);
 }
 
 void ABai5Character::EndDeadBodyReported(ADeadBody* EndDeadBodyDes)
 {
+	if(!IsGhost)
 	EndFoundDeadBody.Broadcast(EndDeadBodyDes);
 }
 
@@ -158,8 +160,13 @@ void ABai5Character::OnRep_KillByVote()
 			Ghost->SetActorHiddenInGame(false); // tat ca ma khac hien hinh
 		}
 	}
-	GetMesh()->SetMaterial(0, DeadMat);
 	GetCapsuleComponent()->SetCollisionProfileName(TEXT("ThroughWall"));
+    GetMesh()->SetSkeletalMesh(Ghosts);
+    GetMesh()->SetRelativeLocation({0.f, 258.4f, -74.7f});
+    GetMesh()->SetAnimationMode(EAnimationMode::AnimationSingleNode);
+    GetMesh()->SetAnimation(AnimGhost);
+    GetMesh()->Play(true);
+    GetMesh()->SetMaterial(0, DeadMat);
 }
 
 void ABai5Character::ServerOnDead_Implementation(FVector Loc)
@@ -248,11 +255,10 @@ void ABai5Character::BeginPlay()
 
 void ABai5Character::OnHealthChange(const FOnAttributeChangeData& Data)
 {
-	UKismetSystemLibrary::PrintString(this, GetActorLocation().ToString());
+	//UKismetSystemLibrary::PrintString(this, GetActorLocation().ToString());
 	FVector LocSend = GetActorLocation();
 	LocSend.Z = 120.f;
 	ServerOnDead(LocSend);
-	
 }
 
 void ABai5Character::GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& OutLifetimeProps) const
